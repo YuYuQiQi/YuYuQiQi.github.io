@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <!--link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css"-->
+  <link rel="stylesheet" href="bootstrap-4.3.1.css">
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <title>器材借用網頁</title>
+  <style> 
+    html{
+      scroll-behavior: smooth;
+    }
+    #myheader{
+      display: flex;
+      position: fixed;
+      z-index: 1;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+
+  </style>
+  <script>
+    localStorage.setItem("totalCount", 0);
+    var countNum = localStorage.getItem('totalCount');
+    
+
+    $(document).ready(function(){
+      $('#count').text(countNum);
+    });
+    var x = 1;
+
+
+
+  </script>
+
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light" id="myheader">
+    <div class="container">
+      <a class="navbar-brand text-primary" href="index.html">
+        <i class="fa fa-tree" aria-hidden="true"></i>
+        <b class="ml-2">S10855042 葉于綺</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar4">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="#readFirst">相關規定</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#newnew">最新公告</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#items">器材品項</a> </li>
+          <li class="nav-item mr-4"> <a class="nav-link" href="check.html">借用申請查詢</a> </li>
+        </ul> 
+        <!-- <a class="btn navbar-btn ml-md-2 btn-primary text-light" href="order.html">送出申請</a> -->
+        <button type="button" class="btn btn-outline-secondary" id="submitbt"><a class="btn-outline-secondary" href="order.html"style="text-decoration: none;">送出申請  <span id="count">0</span></a></button>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5 text-center" style="background-image: url('assets/img/banner.svg');background-size:cover;" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="bg-white p-5 mx-auto col-md-8 col-10">
+          <h3 class="display-3">器材借用</h3>
+          <p class="mb-3 lead">臺南大學數位系系學會</p>
+          <p class="mb-4">網頁程式設計期末專案<br>做得成功的話，我寒假就可以把它優化然後上線使用啦～<br></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3" id="readFirst">
+    <div class="container">
+      <div class="row my-4 d-flex justify-content-center">
+        <div class="d-flex flex-column justify-content-center col-lg-7 p-3" id="readFirst">
+          <h1 class=""><b>Read First</b></h1>
+          <ul class="">
+            <li>欲借用器材之單位，至本網站填寫借用申請，再至「借用申請查詢」確認申請狀態。</li>
+            <li>器材有借用數量限制，借用時請依限制數量填寫。</li>
+            <li>器材使用日前2週開放借用申請。</li>
+            <li>需填寫正確個人資訊（姓名、系級、連絡電話），器材歸還時如有毀損，維修費用由借用人負全責。</li>
+            <li>違規（逾時歸還、預借未領取及影響器材管理借用情事等），依情節輕重系會有權利取消器材預約登記資格。</li>
+            <li>請愛惜使用器材，如有毀損需自行負擔維修費用或照價賠償。</li>
+            <li>如未規定者，依情況得另行適切規定。</li>
+          </ul>
+        </div>
+        <div class="p-0 col-lg-5"> <img class="d-block img-fluid" src="assets/img/pic01.jpg"> </div>
+      </div>
+      <div class="row my-4 d-flex justify-content-center">
+        <div class="p-0 order-2 order-lg-1 col-lg-3"> <img class="img-fluid d-block" src="assets/img/pic02.jpg"> </div>
+        <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2">
+          <h1 class="">Contact Us</h1>
+          <p class="lead w-50">數位系系會IG：nutn_ilt</p><i class="fa fa-instagram text-muted mx-2 fa-2x fa-fw d-flex"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="newnew">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center display-4">最新公告</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="col-md-12">
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action flex-column align-items-start h-25">
+            <div class="d-flex w-100 justify-content-between">
+              <h3 class="mb-1">檔案紀錄-4</h3> <small class="text-muted">2022/01/02 SUN</small>
+            </div>
+            <p class="mb-1">資料庫連動好難，真的不要拖到最後一天才來搞這些ㄟ</p>
+          </a>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action flex-column align-items-start h-25">
+            <div class="d-flex w-100 justify-content-between">
+              <h3 class="mb-1">檔案紀錄-3</h3> <small>2022/01/01 SAT</small>
+            </div>
+            <p class="mb-1">連一個精簡風的設計都好難做，修訂版PPT如火如荼進行中......</p>
+            <small>有種變成日記的感覺</small>
+          </a>
+          <a class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h3 class="mb-1">檔案紀錄-2</h3> <small class="text-muted">2021/12/31 FRI</small>
+            </div>
+            <p class="mb-1">版面切一切，文字內容全都塞進來！</p>
+          </a>
+        </div>
+        <a class="list-group-item list-group-item-action flex-column align-items-start h-50">
+          <div class="d-flex w-100 justify-content-between">
+            <h3 class="mb-1">檔案紀錄-1</h3> <small>2021/12/30 THUR</small>
+          </div>
+          <p class="mb-1">網頁的內容、切版確定。吃完慶功宴後也該好好做事了</p>
+          <small>沒錯，我從今天才開始真正動工：）</small>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="py-5" id="items">
+    <div class="container">
+      <div class="row">
+        <div class="text-center col-md-12">
+          <h3 class="display-4">器材項目</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="">美術用品/耗材</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-2 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="scissors">剪刀</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="scissors_amount">5</b> </h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="scissors_place">C2 層架</h5>
+              <button class="btn btn-primary mt-3" id="scissors_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-2 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="knife">美工刀</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="knife_amount">6</b> </h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="knife_place">C2層架</h5>
+              <button class="btn btn-primary mt-3" id="knife_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-2 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="ruler">直尺</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="ruler_amount">10</b></h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="ruler_place">C5層架</h5>
+              <button class="btn btn-primary mt-3" id="ruler_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-2 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="marker">奇異筆</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="marker_amount">4</b></h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="marker_place">C5層架</h5>
+              <button class="btn btn-primary mt-3" id="marker_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-2 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="tape">透明膠帶</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="tape_amount">8</b></h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="tape_place">C3層架</h5>
+              <button class="btn btn-primary mt-3" id="tape_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-2 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="dbtape">雙面膠</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="dbtape_amount">4</b></h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="dbtape_place">C3層架</h5>
+              <button class="btn btn-primary mt-3" id="dbtape_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="">音響/麥克風/線材</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-3 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="stereo">音響</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="stereo_amount">2</b> </h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="stereo_place">A5</h5>
+              <button class="btn btn-primary mt-3" id="stereo_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-3 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="blStereo">藍芽音響</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="blStereo_amount">1</b> </h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="blStereo_place">A5</h5>
+              <button class="btn btn-primary mt-3" id="blStereo_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-3 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="cable">音源轉接</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="cable_amount">2</b> </h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="cable_place">A2層架</h5>
+              <button class="btn btn-primary mt-3" id="cable_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-3 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="exCord">延長線</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="exCord_amount">3</b> </h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="exCord_place">A2層架</h5>
+              <button class="btn btn-primary mt-3" id="exCord_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="">活動道具</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-3 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="gun">水槍</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="gun_amount">10</b></h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="gun_place">B1</h5>
+              <button class="btn btn-primary mt-3" id="gun_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-3 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="ygBall">瑜珈球</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="ygBall_amount">1</b> </h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="ygBall_place">B2</h5>
+              <button class="btn btn-primary mt-3" id="ygBall_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-3 p-3">
+          <div class="card bg-light">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="mb-0" id="bat">軟棒球棒</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <h2 class="mb-0"> <b id="bat_amount">1</b> </h2>
+                </div>
+              </div>
+              <h5 class="my-3" id="bat_place">B2</h5>
+              <button class="btn btn-primary mt-3" id="bat_bt">借用 ＋</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2022 連夜趕工累死的于綺</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" ></script> -->
+  
+  <script>
+    var Count1 = 0;
+    var Count2 = 0;
+    var Count3 = 0;
+    var Count4 = 0;
+    var Count5 = 0;
+    var Count6 = 0;
+    var Count7 = 0;
+    var Count8 = 0;
+    var Count9 = 0;
+    var Count10 = 0;
+    var Count11 = 0;
+    var Count12 = 0;
+    var Count13 = 0;
+
+    $('#scissors_bt').click(function(){
+      var countAfter = '';
+      
+      if($('#scissors_amount').text()>0){
+        countAfter = (parseInt($('#scissors_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#scissors_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+        
+        // localStorage.setItem('item1_Name', '剪刀');
+        // localStorage.setItem('item1', (parseInt(Count1) +1).toString() );
+
+        // $('#scissors_amount').text((5 - parseInt(localStorage.getItem('item1'))).toString());
+        
+      }
+      else{
+        $('#scissors_amount').text('0');
+      }
+    });
+    $('#knife_bt').click(function(){
+      var countAfter = '';
+      if($('#knife_amount').text()>0){
+        countAfter = (parseInt($('#knife_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#knife_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#knife_amount').text('0');
+      }
+    });
+    $('#ruler_bt').click(function(){
+      var countAfter = '';
+      if($('#ruler_amount').text()>0){
+        countAfter = (parseInt($('#ruler_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#ruler_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#ruler_amount').text('0');
+      }
+    });
+    $('#marker_bt').click(function(){
+      var countAfter = '';
+      if($('#marker_amount').text()>0){
+        countAfter = (parseInt($('#marker_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#marker_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#marker_amount').text('0');
+      }
+    });
+    $('#tape_bt').click(function(){
+      var countAfter = '';
+      if($('#tape_amount').text()>0){
+        countAfter = (parseInt($('#tape_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#tape_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#tape_amount').text('0');
+      }
+    });
+    $('#dbtape_bt').click(function(){
+      var countAfter = '';
+      if($('#dbtape_amount').text()>0){
+        countAfter = (parseInt($('#dbtape_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#dbtape_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#dbtape_amount').text('0');
+      }
+    });
+    $('#stereo_bt').click(function(){
+      var countAfter = '';
+      if($('#stereo_amount').text()>0){
+        countAfter = (parseInt($('#stereo_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#stereo_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#stereo_amount').text('0');
+      }
+    });
+    $('#blStereo_bt').click(function(){
+      var countAfter = '';
+      if($('#blStereo_amount').text()>0){
+        countAfter = (parseInt($('#blStereo_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#blStereo_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#blStereo_amount').text('0');
+      }
+    });
+    $('#cable_bt').click(function(){
+      var countAfter = '';
+      if($('#cable_amount').text()>0){
+        countAfter = (parseInt($('#cable_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#cable_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#cable_amount').text('0');
+      }
+    });
+    $('#exCord_bt').click(function(){
+      var countAfter = '';
+      if($('#exCord_amount').text()>0){
+        countAfter = (parseInt($('#exCord_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#exCord_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#exCord_amount').text('0');
+      }
+    });
+    $('#gun_bt').click(function(){
+      var countAfter = '';
+      if($('#gun_amount').text()>0){
+        countAfter = (parseInt($('#gun_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#gun_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#gun_amount').text('0');
+      }
+    });
+    $('#ygBall_bt').click(function(){
+      var countAfter = '';
+      if($('#ygBall_amount').text()>0){
+        countAfter = (parseInt($('#ygBall_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#ygBall_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#ygBall_amount').text('0');
+      }
+    });
+    $('#bat_bt').click(function(){
+      var countAfter = '';
+      if($('#bat_amount').text()>0){
+        countAfter = (parseInt($('#bat_amount').text())-1).toString();
+        console.log(countAfter);
+        $('#bat_amount').text(countAfter);
+        $('#count').text((parseInt($('#count').text())+1).toString());
+        localStorage.setItem("totalCount", $('#count').text());
+      }
+      else{
+        $('#bat_amount').text('0');
+      }
+    });
+  
+  
+  
+  </script>
+
+
+</body>
+
+</html>
