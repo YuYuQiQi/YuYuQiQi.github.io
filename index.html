@@ -5,53 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <!--link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css"-->
   <link rel="stylesheet" href="bootstrap-4.3.1.css">
+  <link rel="stylesheet" href="assets/pageStyle.css">
 
-  <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-2.1.4.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="database.js" type="module"></script>
 
   <title>器材借用網頁</title>
-  <style> 
-    html{
-      scroll-behavior: smooth;
-    }
-    #myheader{
-      display: flex;
-      position: fixed;
-      z-index: 1;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.9);
-    }
-
-
-  </style>
-  <script>
-    localStorage.setItem("totalCount", 0);
-    var countNum = localStorage.getItem('totalCount');
-    
-
-    $(document).ready(function(){
-      $('#count').text(countNum);
-    });
-    var x = 1;
-
-
-
-  </script>
-
-
+  
 
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-light" id="myheader">
+  <nav class="navbar navbar-expand-md navbar-light myheader">
     <div class="container">
       <a class="navbar-brand text-primary" href="index.html">
         <i class="fa fa-tree" aria-hidden="true"></i>

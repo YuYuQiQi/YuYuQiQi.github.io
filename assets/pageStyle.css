@@ -1,0 +1,10 @@
+html{
+    scroll-behavior: smooth;
+  }
+.myheader{
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
