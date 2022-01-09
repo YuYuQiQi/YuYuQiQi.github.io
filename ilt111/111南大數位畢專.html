@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="animate.css">
+    <title>111南大數位畢專</title>
+    <link href="building.jpg" rel="shortcut icon">
+</head>
+<body>
+    <style>
+        body{
+            font-family: "Bodoni MT Black";
+            font-family: "微軟正黑體";
+            background-color: rgb(15, 15, 15);           
+        }
+        .content1{
+            width: 100%;          
+            margin: auto;
+            /*background-image: url(building.jpg);*/
+            background-size:cover; 
+            background-color: black;
+            background-repeat: no-repeat;
+        }
+        .it1{
+            text-align: center;
+            max-width:600px;
+            height:900px;
+            margin: auto;
+            background-image: url("img/poster.png");
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0px 0px 80px #ffffff; 
+            -webkit-box-shadow: 0px 0px 80px #ffffff; 
+            -moz-box-shadow: 0px 0px 80px #ffffff;      
+        }
+        .it1 img{
+            height: 100%;
+            width: 100%;
+        }
+        .it2 a{
+            padding: 10px;
+            font-size: 30px;
+            text-decoration: none;
+            background-color: rgba(233, 231, 231, 0.911);
+            color: rgba(228, 21, 31, 0.76);
+            border: solid 2px white ;
+            border-radius:10px; 
+            animation: g 1s infinite alternate;
+        }
+        @keyframes g {
+	        0%{border: solid 2px white ;}
+	        100%{border: solid 2px rgba(105, 104, 104, 0.315)  ;
+            color: (73, 71, 71, 0.555);
+            }
+        }
+        .it2 a:hover{
+            transition: 0.5s;
+            font-size: 35px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            border: solid 2px ;
+            border-radius:10px; 
+        }
+        .link1{
+            margin: 20px auto;
+        }
+        .cube{
+            background-color: transparent;
+            width: 100%;
+            height: 450px;
+            z-index: 1;
+            color: wheat;
+            display: flex;
+        }
+        .cubes{
+            display: inline-block;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.959);
+            width: 300px;
+            height:450px;
+            color: transparent;
+        }
+        .cubes:hover{
+            background-color: transparent;
+            box-shadow: 0px 0px 80px #ffffff; 
+            -webkit-box-shadow: 0px 0px 80px #ffffff; 
+            -moz-box-shadow: 0px 0px 80px #ffffff; 
+            color: white;
+        }
+        .c1{
+            animation: change 1s ;
+            background-color: rgba(0, 0, 255, 0.144);
+            color: white;
+            border: solid 1px rgba(250, 250, 250, 0.13);
+        }
+        .c2{
+            animation-delay: 1.2s;
+            animation: change 1.2s ;
+            background-color: rgba(255, 0, 0, 0.164);
+            color: white;
+            border: solid 1px rgba(250, 250, 250, 0.13);
+        }
+        .c3{
+            animation-delay: 1.4s;
+            animation: change 1.4s ;
+            background-color: rgba(85, 85, 85, 0.342);
+            color: white;
+            border: solid 1px rgba(250, 250, 250, 0.13);
+        }
+        .c4{
+            animation-delay: 1.6s;
+            animation: change 1.6s ;
+            background-color: rgba(178, 197, 7, 0.24);
+            color: white;
+            border: solid 1px rgba(250, 250, 250, 0.13);
+        }
+        @keyframes change{
+            0%{background-color:rgba(0, 0, 0, 0.959);color: transparent;border: solid 1px transparent; }
+            100%{background-color: transparent;}
+        }
+        h1{
+            line-height: 150px;
+            font-size: 50px;
+            animation: text_color 1s infinite alternate;
+        }
+        @keyframes text_color{
+            0%{color: black}
+            100%{color: white}
+        }
+
+
+
+
+    </style>
+
+    <div class="content1">
+        <div class="it1">
+            <div class="cube">
+                <div class="cubes c1" id = "c1" onclick="c1_click()"><h1>專題作品</h1></div>
+                <div class="cubes c3" id = "c3" onclick="c3_click()"><h1>活動時間</h1></div>
+                
+            </div>
+            <div class="cube">
+                <div class="cubes c4" id = "c4" onclick="c4_click()"><h1>DEMO影片</h1></div>
+                <div class="cubes c2" id = "c2" onclick="c2_click()" ><h1>抽獎資訊</h1></div>
+                
+            </div>
+        </div>
+        <div class="it2">
+            
+        </div>
+        
+        
+    </div>
+    
+    <script>
+        var c1 = document.getElementById("c1");
+        var c2 = document.getElementById("c2");
+        var c3 = document.getElementById("c3");
+        var c4 = document.getElementById("c4");
+
+        function goto(){
+           
+            window.location = 'Work.html';
+            setTimeout(" window.location = 'Work.html'",2000);
+        }
+    
+        function c1_click()
+        {
+            
+            window.location = 'index.html';
+        }
+        
+        function c2_click()
+        {
+            window.location = 'lottery.html';
+        }
+        function c3_click()
+        {
+            window.location = 'schedule.html';
+        }
+        function c4_click()
+        {
+            window.location = 'demo.html';
+        }
+    
+    
+    
+    </script>
+
+
+</body>
+</html>
