@@ -170,6 +170,7 @@ $('#scissors_bt').click(function(){
   });
 
   function AddToCart(buttonID){
+    var bt = document.getElementsByClassName('addbt');
     var countAfter = '';
     if($('#buttonID').text()>0){
       countAfter = (parseInt($('#buttonID').text())-1).toString();
