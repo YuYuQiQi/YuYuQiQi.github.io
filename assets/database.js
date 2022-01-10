@@ -16,3 +16,28 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+import { getDatabase, ref, get, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+const db = getDatabase(app);
+
+function InsertData() {
+  if (result == []) {
+      return
+  }
+  const time = Date.now();
+  set(ref(db, 'food/' + time), {
+      details: result,
+      total: bill
+  })
+      .then(() => {
+          SelectData(time);
+          $(function () {
+              $('#dialog').dialog({
+                  modal: true
+              })
+          })
+      })
+      .catch((error) => {
+          alert(error);
+      })
+}
+

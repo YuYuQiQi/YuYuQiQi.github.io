@@ -168,3 +168,18 @@ $('#scissors_bt').click(function(){
       $('#bat_amount').text('0');
     }
   });
+
+  function AddToCart(buttonID){
+    var countAfter = '';
+    if($('#buttonID').text()>0){
+      countAfter = (parseInt($('#buttonID').text())-1).toString();
+      console.log(countAfter);
+      $('#buttonID').text(countAfter);
+      $('#count').text((parseInt($('#count').text())+1).toString());
+      localStorage.setItem("totalCount", $('#count').text());
+    }
+    else{
+      $('#buttonID').text('0');
+    }
+
+  }
